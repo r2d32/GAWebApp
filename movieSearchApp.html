@@ -18,6 +18,10 @@
             </ul>
         </div>
 
+        <!-- Movie Information -->
+        <p id="movieTitle"></p>
+        <div><img id="movieImg" src=""></div>
+
         <script src="jquery.js"></script>
         <script>
 
@@ -45,7 +49,7 @@
                 });
             } else if (kind == "id"){
                 $.post("http://www.omdbapi.com/?i=" + string, function(data) {
-                    $("body").removeClass("loading");
+                    displayMovie(eval("(" + data + ")"));
                     console.log(data);
                 });
             }
@@ -62,6 +66,16 @@
                     ($("<li>").append(searchResults[i].Title)).attr(
                         "id", searchResults[i].imdbID));
             }
+
+        }
+
+        // API's REQUEST FUNCTION
+        function displayMovie(searchResult){
+
+            $( "#movieTitle" ).text("");
+            $( "#movieTitle" ).append( searchResult.Title );
+            $( "#movieImg" ).attr("src", (
+                (searchResult.Poster != "N/A")? searchResult.Poster: "missing.png"));
 
         }
 
