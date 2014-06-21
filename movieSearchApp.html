@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>MovieSearch</title>
-        <script src="jquery.js"></script>
     </head>
 
     <body>
@@ -15,28 +14,57 @@
 
         <!-- Search Information -->
         <div>
-            <ul id= "results">
+            <ul id="results">
             </ul>
         </div>
 
+        <script src="jquery.js"></script>
         <script>
+
+        // SELECT LIST ELEMENT TO DISPLAY
+        $("#results").on("click", "li", function(e) { 
+             
+            request($(this).attr("id"), "id"); 
+
+        });
 
         // INPUT SEARCH FUNCTION
         $( "#search" ).click(function() {
 
-            request($( "#title" ).val());
+            request($( "#title" ).val(), "search");
             $( "#title" ).val("");
 
         });
 
         // API's REQUEST FUNCTION
-        function request(string){
+        function request(string, kind){
 
-            $.post("http://www.omdbapi.com/?s=" + string, function(data) {
-                console.log(data);
-            });
+            if(kind == "search"){
+                $.post("http://www.omdbapi.com/?s=" + string, function(data) {
+                    displaySearchResults(eval("(" + data + ")").Search);
+                });
+            } else if (kind == "id"){
+                $.post("http://www.omdbapi.com/?i=" + string, function(data) {
+                    $("body").removeClass("loading");
+                    console.log(data);
+                });
+            }
 
         }
+
+        // FUNCTINO TO DISPLAY SEARCH RESULT
+        function displaySearchResults(searchResults){
+
+            $( "#movieTitle" ).text("");
+            $("ul").empty();
+            for (var i = 0; i < searchResults.length; i++) {
+                $("#results").append(
+                    ($("<li>").append(searchResults[i].Title)).attr(
+                        "id", searchResults[i].imdbID));
+            }
+
+        }
+
         </script>
     </body>
 </html>
