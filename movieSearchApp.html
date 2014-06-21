@@ -8,14 +8,35 @@
 
     <body>
 
+        <!-- Header and Search -->
         <h1>MovieSearch</h1>
         Movie Title: <input id="title" placeholder="Search" >
         <input id="search" type ="submit">
+
+        <!-- Search Information -->
         <div>
             <ul id= "results">
             </ul>
         </div>
 
-        <script></script>
+        <script>
+
+        // INPUT SEARCH FUNCTION
+        $( "#search" ).click(function() {
+
+            request($( "#title" ).val());
+            $( "#title" ).val("");
+
+        });
+
+        // API's REQUEST FUNCTION
+        function request(string){
+
+            $.post("http://www.omdbapi.com/?s=" + string, function(data) {
+                console.log(data);
+            });
+
+        }
+        </script>
     </body>
 </html>
