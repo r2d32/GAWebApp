@@ -1,3 +1,4 @@
+
 body{
     background: #eaeaea;
     margin-left: 0px;
@@ -21,19 +22,20 @@ body{
 
 #searchResults {
     float: left;
-    width: calc( 39% );
+    width: calc( 39% - 4px );
     max-width: 280px;
-    min-height: 2000px;
 }
 
 #wrap{
+    background: #505459;
     margin: 140px auto;
-    min-height: 2000px;
+    display: flex;
 }
 
 .movie{
     width: calc( 60% );
-    border: solid 1px;
+    width: calc( 61% - 30px );
+    margin: 30px 0px 0px 30px;
 }
 
 
@@ -55,7 +57,9 @@ body{
     width: 300px;
 }
 div.fieldCont > div {
+    -moz-box-flex: 0;
     display: -webkit-box;
+    display: -moz-box;
 }
 
 .topField{
@@ -121,41 +125,65 @@ div.fieldCont > div {
 
 
 /********** MOVIE INFO **********/
+.movieCont {
+    width: 1000px;
+    margin: auto;
+    padding-bottom: 80px;
+    padding-top: 80px;
+
+}
 .movie {
     position: relative;
     display: inline-block;
 }
 .movie img {
     vertical-align: middle;
-    max-width: 95%;
-    min-width: 95%;
+    width: calc(100% - 32px);
+    margin: 16px;
 
 }
-.picture-gradient {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-
-    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.23) 64%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(64%,rgba(0,0,0,0.23)), color-stop(95%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* IE10+ */
-    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
-
+.movieContRight{
+    float: left;
+    width: calc( 70% - 16px);
+    padding-left: 16px;
 }
-#movieTitle{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.movieContLeft{
+    float: left;
+    width: 30%;
+}
+#movieTitle {
+
     color: white;
-    text-shadow: 0 0 6px #000000;
-    font-size: 2em;
-    z-index: 100;
+
+}
+.movieContLine > img , .movieContLine > p{
+    display: inline;
+}
+.movieContLine > img{
+    width: 22px;
+    margin: 0px;
+}
+.movieContLine{
+    margin-top: 6px;
+
 }
 
 #searchResults{
     color: white;
-    background: rgb(36, 32, 54);
+    border-right: 4px solid;
 }
+
+.movieContRight > p, .movieContRight > div > p {
+    font-size: 14px;
+    font-weight: 100;
+    color: white;
+}
+li {
+    list-style-type: circle;
+    font-weight: 400;
+    padding-right: 30px;
+}
+li:hover {
+    color: #D4856F;
+}
+

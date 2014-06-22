@@ -1,5 +1,6 @@
 // INITIAL SEARCH
-request("tt0674200", "id");
+request("school", "search");
+request("tt0302886", "id");
 
 // SELECT LIST ELEMENT TO DISPLAY
 $("#results").on("click", "li", function(e) { 
@@ -48,7 +49,19 @@ function displaySearchResults(searchResults){
 function displayMovie(searchResult){
 
     $( "#movieTitle" ).text("");
-    $( "#movieTitle" ).append( searchResult.Title );
+    $( "#movieTitle" ).append( searchResult.Title + " ( " + searchResult.Year + " )" );
+    $( "#duration" ).text("");
+    $( "#duration" ).append( searchResult.Runtime + " - " + searchResult.Genre  );
+    $( "#imdbScore" ).text("");
+    $( "#imdbScore" ).append(  searchResult.imdbRating  );
+    $( "#metaScore" ).text("");
+    $( "#metaScore" ).append(  searchResult.Metascore  );
+    $( "#plot" ).text("");
+    $( "#plot" ).append(searchResult.Plot );
+    $( "#director" ).text("");
+    $( "#director" ).append(":" + searchResult.Director );
+    $( "#actors" ).text("");
+    $( "#actors" ).append("Actors:" + searchResult.Actors );
     $( "#movieImg" ).attr("src", (
         (searchResult.Poster != "N/A")? searchResult.Poster: "missing.png"));
 

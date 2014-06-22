@@ -11,7 +11,7 @@
         <div class="header-cont">
             <div class="header">
                 <div id="logo">
-                    <p>Where you looking for a movie?</p>
+                    <p>Were you looking for a movie?</p>
                 </div>
                 <div class="fieldCont">
                     <div id='searchBox' class="topField">
@@ -31,19 +31,48 @@
         </div>
 
         <div id = "wrap">
+            <div class="movieCont">
+                <!-- Search Information -->
+                <div id="searchResults">
+                    <h3  style="padding: 30px 0px 0px 14px;color: #FEE56F;">SEARCH RESULTS</h3>
+                    <ul id= "results">
+                    </ul>
+                </div>
 
-            <!-- Search Information -->
-            <div id="searchResults">
-                <ul id= "results">
-                </ul>
-            </div>
+                <!-- Movie Information -->
 
-            <!-- Movie Information -->
-
-            <div class="movie">
-                <p id="movieTitle"></p>
-                <div class="picture-gradient"></div>
-                <img id="movieImg" src="" />
+                <div class="movie">
+                    <div class="movieContLeft">
+                        <img id="movieImg" src="" />
+                    </div>
+                    <div class="movieContRight">
+                        <h3 style = "color: #FEE56F;"id="movieTitle"></h3>
+                        <div class="movieContLine">
+                            <img src="clock.png">
+                            <p id="duration"></p>
+                        </div>
+                        <div class="movieContLine">
+                            <img src="imdb.png">
+                            <p id="imdbScore"></p>
+                            <img style="margin: 0px 0px 0px 20px;"src="meta.png">
+                            <p id="metaScore"></p>
+                        </div>
+                        
+                        <div class="movieContLine">
+                            <img src="plot.png">
+                            <p id="plot"></p>
+                        </div>
+                        <div style="margin-top: 28px;" class="movieContLine">
+                            <img src="director.png">
+                            <p id="director"></p>
+                        </div>
+                        <div class="movieContLine">
+                            <img src="actors.png">
+                            <p id="actors"></p>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
 
         </div>
