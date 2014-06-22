@@ -3,82 +3,52 @@
     <head>
         <meta charset="utf-8">
         <title>MovieSearch</title>
+        <link rel="stylesheet" type="text/css" href="webApp.css">
     </head>
 
     <body>
-
         <!-- Header and Search -->
-        <h1>MovieSearch</h1>
-        Movie Title: <input id="title" placeholder="Search" >
-        <input id="search" type ="submit">
-
-        <!-- Search Information -->
-        <div>
-            <ul id="results">
-            </ul>
+        <div class="header-cont">
+            <div class="header">
+                <div id="logo">
+                    <p>Where you looking for a movie?</p>
+                </div>
+                <div class="fieldCont">
+                    <div id='searchBox' class="topField">
+                      <div id='searchForm' >
+                        <input id='title' placeholder='Find Movies, TV Shows and more...' type='text'/>
+                        <div id='searchBtn'><img src="zoom.png"></div>
+                      </div>
+                    </div>
+                    <div>
+                        <div class="topField">THIS IS A PROJECT FOR GENERAL ASSEMBLY</div>
+                        <div class="topField">BY <strong>Carlos Agudo</strong></div>
+                        <div class="topField" id= "portfolio" ><a href="http://gamermad.com/">SEE PORFTOLIO</a></div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
 
-        <!-- Movie Information -->
-        <p id="movieTitle"></p>
-        <div><img id="movieImg" src=""></div>
+        <div id = "wrap">
+
+            <!-- Search Information -->
+            <div id="searchResults">
+                <ul id= "results">
+                </ul>
+            </div>
+
+            <!-- Movie Information -->
+
+            <div class="movie">
+                <p id="movieTitle"></p>
+                <div class="picture-gradient"></div>
+                <img id="movieImg" src="" />
+            </div>
+
+        </div>
 
         <script src="jquery.js"></script>
-        <script>
-
-        // SELECT LIST ELEMENT TO DISPLAY
-        $("#results").on("click", "li", function(e) { 
-             
-            request($(this).attr("id"), "id"); 
-
-        });
-
-        // INPUT SEARCH FUNCTION
-        $( "#search" ).click(function() {
-
-            request($( "#title" ).val(), "search");
-            $( "#title" ).val("");
-
-        });
-
-        // API's REQUEST FUNCTION
-        function request(string, kind){
-
-            if(kind == "search"){
-                $.post("http://www.omdbapi.com/?s=" + string, function(data) {
-                    displaySearchResults(eval("(" + data + ")").Search);
-                });
-            } else if (kind == "id"){
-                $.post("http://www.omdbapi.com/?i=" + string, function(data) {
-                    displayMovie(eval("(" + data + ")"));
-                    console.log(data);
-                });
-            }
-
-        }
-
-        // FUNCTINO TO DISPLAY SEARCH RESULT
-        function displaySearchResults(searchResults){
-
-            $( "#movieTitle" ).text("");
-            $("ul").empty();
-            for (var i = 0; i < searchResults.length; i++) {
-                $("#results").append(
-                    ($("<li>").append(searchResults[i].Title)).attr(
-                        "id", searchResults[i].imdbID));
-            }
-
-        }
-
-        // API's REQUEST FUNCTION
-        function displayMovie(searchResult){
-
-            $( "#movieTitle" ).text("");
-            $( "#movieTitle" ).append( searchResult.Title );
-            $( "#movieImg" ).attr("src", (
-                (searchResult.Poster != "N/A")? searchResult.Poster: "missing.png"));
-
-        }
-
-        </script>
+        <script src="movieSearchFunctionality.js"></script>
     </body>
 </html>

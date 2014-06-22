@@ -1,0 +1,161 @@
+body{
+    background: #eaeaea;
+    margin-left: 0px;
+    color: #303335;
+    margin-top: 50px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: "proxima-nova", "proxima-nova", Helvetica, Arial, sans-serif !important ;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.header-cont {
+    z-index: 100;
+    width:100%;
+    position:fixed;
+    margin: 36px;
+    top:0px;
+}
+
+
+#searchResults {
+    float: left;
+    width: calc( 39% );
+    max-width: 280px;
+    min-height: 2000px;
+}
+
+#wrap{
+    margin: 140px auto;
+    min-height: 2000px;
+}
+
+.movie{
+    width: calc( 60% );
+    border: solid 1px;
+}
+
+
+/********** HEADER **********/
+#logo > p {
+    margin: 0px;
+}
+#logo{
+    max-width: 160px;
+    background: rgba(53,57,62,0.8);
+    color: #eaeaea;
+    margin-right: 0px;
+    padding: 15px;
+    font-size: 18px;
+
+}
+#searchBox {
+    position: relative;
+    width: 300px;
+}
+div.fieldCont > div {
+    display: -webkit-box;
+}
+
+.topField{
+    padding: 10px;
+    margin-right: 1px;
+    height: 15px;
+    background: rgba(255,255,255,0.8);
+    color: #777;
+    font-size: 11px;
+    overflow: hidden;
+    margin: 0px 0px 2px 2px;
+}
+
+#title {
+    font-size: 14px;
+    color: #ddd;
+    border-width: 0;
+    background: transparent;
+}
+
+#searchBox input[type="text"] {
+    width: 215px;
+    color: #333;
+    margin: 0px;
+    outline: none;
+    font-size: 11px;
+}
+#portfolio > a{
+    text-decoration: none;
+}
+#searchBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 35px;
+    width: 80px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    border-width: 0;
+    background: rgba(218,85,79,0.7);
+    cursor: pointer;
+}
+#searchBtn:hover {
+    background: #da554f!important;
+}
+#searchBtn:active {
+    background: #da554f!important;
+}
+#searchBtn > img {
+    height: 60%;
+    margin: 10%;
+}
+.header > div{
+    float: left;
+
+}
+.search-bar{
+    width: 65%;
+}
+
+
+
+/********** MOVIE INFO **********/
+.movie {
+    position: relative;
+    display: inline-block;
+}
+.movie img {
+    vertical-align: middle;
+    max-width: 95%;
+    min-width: 95%;
+
+}
+.picture-gradient {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.23) 64%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(64%,rgba(0,0,0,0.23)), color-stop(95%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.23) 64%,rgba(0,0,0,1) 95%,rgba(0,0,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+
+}
+#movieTitle{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    text-shadow: 0 0 6px #000000;
+    font-size: 2em;
+    z-index: 100;
+}
+
+#searchResults{
+    color: white;
+    background: rgb(36, 32, 54);
+}
